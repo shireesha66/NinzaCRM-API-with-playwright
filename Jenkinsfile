@@ -32,20 +32,23 @@ pipeline {
         }
 
         stage('Publish Report') {
-            steps {
-                publishHTML(target: [
-                    reportDir: 'playwright-report/html', 
-                    reportFiles: 'index.html', 
-                    reportName: 'Playwright Test Report'
-                ])
-            }
-        }
+    steps {
+        publishHTML(target: [
+            reportDir: 'playwright-report',
+            reportFiles: 'index.html',
+            reportName: 'Playwright Test Report',
+            keepAll: true,  // keeps report from every build
+            alwaysLinkToLastBuild: true,
+            allowMissing: false
+        ])
     }
+}
+
 
     post {
         always {
             archiveArtifacts artifacts: '**/playwright-report/html/**', fingerprint: true
-            junit '**/playwright-report/test-results/*.xml'
+            //junit '**/playwright-report/test-results/*.xml'
         }
     }
 }
