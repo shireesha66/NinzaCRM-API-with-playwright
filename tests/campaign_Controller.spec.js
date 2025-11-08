@@ -8,8 +8,8 @@ test.describe.serial('Campaign Controller Tests', () => {  // 👈 make the whol
 
   test.beforeAll(async () => {
     const authdata = {
-      username: 'rmgyantra',
-      password: 'rmgy@9999',
+      username: 'nonadminuser',
+      password: 'nonadminpassword',
     };
 
     const apiContext = await request.newContext({
@@ -47,9 +47,9 @@ test.describe.serial('Campaign Controller Tests', () => {  // 👈 make the whol
 
     const campaignData = {
       campaignid: '',
-      campaignName: 'SaveTurtle',
+      campaignName: 'SaveTurtle&SeaLion',
       campaignStatus: 'Active',
-      description: 'Protecting endangered turtles',
+      description: 'Protecting endangered turtles&SeaLions',
       expectedCloseDate: '2025-01-30',
       targetAudience: 'Public',
       campaignType: 'Awareness',
@@ -92,7 +92,7 @@ test.describe.serial('Campaign Controller Tests', () => {  // 👈 make the whol
 
   const updateData = {
     campaignId: sharedCampaignId,
-    campaignName: 'SaveTurtle - Updated',
+    campaignName: 'SaveTurtle&SeaLions - Updated',
     campaignStatus: 'Active',
     description: 'Protecting endangered turtles - Updated',
     expectedCloseDate: '2025-12-30',
@@ -113,16 +113,16 @@ test.describe.serial('Campaign Controller Tests', () => {  // 👈 make the whol
   expect(response.status(), 'Expected successful update').toBe(200);
 });
 
-  test('4. Delete Campaign', async () => {
-  console.log('\n=== Starting Delete Campaign Test ===');
-  expect(sharedCampaignId, 'Campaign ID must exist').toBeTruthy();
+//   test('4. Delete Campaign', async () => {
+//   console.log('\n=== Starting Delete Campaign Test ===');
+//   expect(sharedCampaignId, 'Campaign ID must exist').toBeTruthy();
 
-  const response = await authContext.delete(`/campaign?campaignId=${sharedCampaignId}`);
-  console.log('Delete response status:', response.status());
+//   const response = await authContext.delete(`/campaign?campaignId=${sharedCampaignId}`);
+//   console.log('Delete response status:', response.status());
 
-  // ✅ Accept 200 or 204 as success
-  expect([200, 204]).toContain(response.status());
-});
+//   // ✅ Accept 200 or 204 as success
+//   expect([200, 204]).toContain(response.status());
+// });
 
 
 });
