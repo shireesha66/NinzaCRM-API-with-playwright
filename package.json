@@ -1,4 +1,6 @@
+
 {
+  "type": "module",
   "name": "ninza-crm-api-testing",
   "version": "1.0.0",
   "main": "CampaignController.js",
@@ -15,3 +17,5 @@
     "dotenv": "^17.2.3"
   }
 }
+
+
