@@ -47,10 +47,7 @@ pipeline {
 
     post {
         always {
-            archiveArtifacts artifacts: '**/playwright-report/html/**', fingerprint: true
+            archiveArtifacts artifacts: 'playwright-report/**/*', fingerprint: true
             //junit '**/playwright-report/test-results/*.xml'
         }
-    }
-}
-
-
+        
