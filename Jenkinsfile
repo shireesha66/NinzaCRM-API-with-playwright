@@ -50,5 +50,12 @@ pipeline {
             archiveArtifacts artifacts: 'playwright-report/**/*', fingerprint: true
             //junit '**/playwright-report/test-results/*.xml'
         }
+
     }
         
+
+        
+    }
+    }
+    
+

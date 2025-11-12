@@ -1,4 +1,4 @@
-import { request } from '@playwright/test';
+/*import { request } from '@playwright/test';
 
 export class APIutils {
     constructor() {
@@ -37,4 +37,5 @@ export class APIutils {
         return authContext;
         }
     }
+        */
     
